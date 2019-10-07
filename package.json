@@ -1,0 +1,31 @@
+{
+  "name": "instanceof-by-symbol",
+  "version": "1.0.0",
+  "description": "Use a Symbol from the registry to identify instances across realms or module versions",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insightfuls/instanceof-by-symbol.git"
+  },
+  "files": [
+    "index.js",
+    "LICENSE"
+  ],
+  "keywords": [
+    "instanceof",
+    "symbol",
+    "realm",
+    "realms",
+    "npm",
+    "versions"
+  ],
+  "author": "Ben Schmidt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/insightfuls/instanceof-by-symbol/issues"
+  },
+  "homepage": "https://github.com/insightfuls/instanceof-by-symbol#readme"
+}
