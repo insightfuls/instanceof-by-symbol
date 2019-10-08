@@ -14,10 +14,29 @@ class Baz extends Bar {
 }
 
 /*
+ * Argument validation.
+ */
+assert.throws(function() {
+	defineInstanceSymbol(Foo, Bar);
+}, TypeError);
+assert.throws(function() {
+	defineInstanceSymbol(true, Foo);
+}, TypeError);
+assert.throws(function() {
+	defineInstanceSymbol(Foo, true);
+}, TypeError);
+assert.throws(function() {
+	defineInstanceSymbol(true, 'tag');
+}, TypeError);
+assert.throws(function() {
+	defineInstanceSymbol('tag', true);
+}, TypeError);
+
+/*
  * Foo and Bar will be equivalent, and since Baz is a Bar, it will be a Foo, too.
  */
-defineInstanceSymbol(Foo, 'instanceof-by-symbol/Foo@1.0.0');
-defineInstanceSymbol(Bar, 'instanceof-by-symbol/Foo@1.0.0');
+assert.equal(defineInstanceSymbol(Foo, 'instanceof-by-symbol/Foo@1.0.0'), Foo);
+assert.equal(defineInstanceSymbol('instanceof-by-symbol/Foo@1.0.0', Bar), Bar);
 
 const foo = new Foo();
 const bar = new Bar();

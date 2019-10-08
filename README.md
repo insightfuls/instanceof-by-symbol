@@ -17,7 +17,14 @@ Now `MyClass` instances tested using `instanceof` will be identified by the `my-
 
 The onus is on the developer to:
 
-* use a symbol identifier that will not (or is unlikely to) clash with others;
-including the module and version is recommended
-* change the symbol when the class is no longer compatible so should no longer
-be considered equivalent
+* use a symbol identifier that will not (or is unlikely to) clash with others; including the module and version is recommended
+* change the symbol when the class is no longer compatible so should no longer be considered equivalent
+
+`defineInstanceSymbol` also returns `MyClass` in case you want to use a more fluid style. It also works with the arguments reversed.
+
+```
+const { defineInstanceSymbol } = require('instanceof-by-symbol');
+
+const MyClass = defineInstanceSymbol("my-module/MyClass@0.1.0", class {
+});
+```

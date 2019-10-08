@@ -1,6 +1,6 @@
 {
   "name": "instanceof-by-symbol",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Use a Symbol from the registry to identify instances across realms or module versions",
   "main": "index.js",
   "scripts": {
